@@ -30,6 +30,67 @@
           <!-- 웹 문서에서 콘텐츠 영역을 나타낸다 -->
           <!-- section 태그는 몇 개의 콘텐츠를 묶는 용도로 사용하고, article 태그는 블로그의 포스트처럼 독립된 콘텐츠로 쓴다. -->
         </section>
+        <section>
+          <!-- 표 만들기 -->
+          <table>
+            <caption>
+              공부 중인 책
+            </caption>
+            <!-- 열을 묶음 -->
+            <!-- <colgroup>
+              표 전체 열의 개수만큼 col 태그 넣기
+              <col style="background-color:#eee;" />
+              <col />
+              <col />
+            </colgroup> -->
+            <thead>
+              <tr>
+                <th>책 이름</th>
+                <th>저자</th>
+                <th>완독 여부</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>이것이 자바다</td>
+                <td>신용권, 임경균</td>
+                <td>O</td>
+              </tr>
+              <tr>
+                <td>모두의 깃 & 깃허브</td>
+                <!-- 행이나 열을 합치는 rowspan, colspan 속성 -->
+                <td rowspan="2">강민철</td>
+                <td>O</td>
+              </tr>
+              <tr>
+                <td>혼자 공부하는 컴퓨터 구조+운영체제</td>
+                <!-- <td>강민철</td> -->
+                <td>X</td>
+              </tr>
+              <tr>
+                <td>혼자 공부하는 SQL</td>
+                <td>우재남</td>
+                <td>X</td>
+              </tr>
+              <tr>
+                <td>Do it! HTML+CSS+자바스크립트 웹 표준의 정석</td>
+                <td>고경희</td>
+                <td>O</td>
+              </tr>
+              <tr>
+                <td>처음 해보는 Servlet&JSP 웹 프로그래밍</td>
+                <td>오정임</td>
+                <td>X</td>
+              </tr>
+              <tr>
+                <td>초보 개발자를 위한 JAVA</td>
+                <td>이병승</td>
+                <td>X</td>
+              </tr>
+            </tbody>
+            <tfoot></tfoot>
+          </table>
+        </section>
       </main>
       <footer>
         <!-- 푸터 영역 -->
