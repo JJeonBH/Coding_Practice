@@ -312,6 +312,78 @@
 
         absolute값을 사용할 때는 주의해야 한다. 요소에 position: absolute라고 한 후 위치값을 지정하면 요소 중에서 position: relative를 사용한 요소를 기준으로 위치를 결정한다. 만약 부모 요소 중에 없으면 상위 요소를 찾아보고, 그래도 없다면 더 위의 요소를 찾아본다. 다시 말해 어떤 요소에 position: absolute를 사용하려면 부모 요소에는 position: relative라고 지정해야 원하는 대로 배치할 수 있다.
         */
+
+        /*
+        배경색을 지정
+        background-color: green;
+        background-color 속성값은 상속되지 않는다.
+        */
+
+        /*
+        배경색의 적용 범위를 조절
+        background-clip: content-box;
+        background-clip 속성값
+        border-box - 박스 모델의 가장 외곽인 테두리까지 적용한다. 기본값
+        padding-box - 박스 모델에서 테두리를 뺀 패딩 범위까지 적용한다.
+        content-box - 박스 모델에서 내용(콘텐츠) 부분에만 적용한다.
+        */
+
+        /*
+        웹 요소에 배경 이미지를 넣음
+        background-image: url('이미지 파일 경로');
+        */
+
+        /*
+        배경 이미지의 반복 방법을 지정
+        background-repeat: no-repeat;
+        background-repeat 속성값
+        repeat - 브라우저 화면에 가득 찰 때까지 가로와 세로로 반복한다. 기본값
+        repeat-x - 브라우저 화면 너비에 가득 찰 때까지 가로로 반복한다.
+        repeat-y - 브라우저 화면 높이에 가득 찰 때까지 세로로 반복한다.
+        no-repeat - 한 번만 표시하고 반복하지 않는다.
+        */
+
+        /*
+        배경 이미지의 위치를 조절
+        background-position: <수평 위치> <수직 위치>;
+        <수평 위치> - left | center | right | <백분율> | <길이 값>
+        <수직 위치> - top | center | bottom | <백분율> | <길이 값>
+        속성값을 2개로 지정한다면 첫 번째 값은 수평 위치의 값이 되고 두 번째 값은 수직 위치의 값이 된다. 속성값을 하나만 지정한다면 웹 브라우저에서는 지정한 값을 수평 위치값으로 간주하고, 수직 위치값은 50%나 center로 간주한다.
+        */
+
+        /*
+        배경 이미지의 적용 범위를 조절
+        background-origin: border-box;
+        background-origin 속성값
+        content-box - 박스 모델에서 내용 부분에만 배경 이미지를 표시한다. 기본값
+        padding-box - 박스 모델에서 패딩까지 배경 이미지를 표시한다.
+        border-box - 박스 모델에서 테두리까지 배경 이미지를 표시한다.
+        */
+
+        /*
+        배경 이미지를 고정
+        background-attachment: fixed;
+        background-attachment 속성값
+        scroll - 화면을 스크롤하면 배경 이미지도 스크롤된다. 기본값
+        fixed - 화면을 스크롤하면 배경 이미지는 고정되고 내용만 스크롤된다.
+        */
+
+        /*
+        background 속성 하나로 배경 이미지 제어
+        background: url('이미지 파일 경로') no-repeat center bottom fixed;
+        속성값이 다르므로 입력 순서는 상관없다.
+        */
+
+        /*
+        배경 이미지 크기를 조절
+        background-size: cover;
+        background-size 속성값
+        auto - 원래 배경 이미지 크기만큼 표시한다. 기본값
+        contain - 요소 안에 배경 이미지가 다 들어오도록 이미지를 확대,축소한다.
+        cover - 배경 이미지로 요소를 모두 덮도록 이미지를 확대,축소한다.
+        <크기> - 이미지의 너비와 높이를 지정한다. 값이 하나만 주어질 경우 너비값으로 인식하며, 높이는 원래 이미지의 너비와 높이 비율에 따라 자동 계산한다.
+        <백분율> - 배경 이미지가 들어갈 요소의 크기를 기준으로 값을 백분율로 지정하고 그 크기에 맞도록 배경 이미지를 확대,축소한다.
+        */
       }
     </style>
   </head>
