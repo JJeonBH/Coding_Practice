@@ -511,6 +511,110 @@
         transition: <transition-property값> | <transition-duration값> | <transition-timing-function값> | <transition-delay값>;
         속성값을 작성하는 순서는 상관이 없다. 다만 시간값을 사용하는 속성이 2개(진행 시간, 지연 시간)이므로 시간값이 2개 있다면 앞에 오는 시간값을 transition-duration 속성으로, 뒤에 오는 시간값은 transition-delay 속성으로 간주한다.
         */
+
+        /*
+        애니메이션
+        CSS3의 animation 속성을 사용하면 자바스크립트를 사용하지 않고도 웹 요소에 애니메이션을 추가할 수 있다. animation 속성은 특정 지점에서 스타일을 바꾸면서 애니메이션을 만드는데, 이렇게 애니메이션 중간에 스타일이 바뀌는 지점을 키프레임(keyframe)이라고 한다.
+        키프레임은 @keyframes 속성으로 정의하고, animation 속성과 그 하위 속성을 이용해서 애니메이션의 실행 시간이나 반복 여부 등을 지정한다.
+        */
+
+        /*
+        애니메이션의 지점과 이름을 설정 (애니메이션 정의)
+        @keyframes <이름> {
+          <선택자> { <스타일> }
+        }
+        @keyframes 속성에서 사용하는 선택자는 스타일 속성값이 바뀌는 지점을 가리킨다. 예를 들어 애니메이션의 중간 지점을 추가하려면 시작 위치를 0%, 끝 위치를 100%로 놓고 50% 위치에 키프레임을 추가하면 된다. 시작과 끝 위치만 사용하려면 0%, 100%와 같은 값 대신 from과 to라는 키워드를 사용해도 된다.
+
+        사용 예시
+        @keyframes shape {
+          from {
+            border: 1px solid transparent;
+          }
+          to {
+            border: 1px solid black;
+            border-radius: 50%;
+          }
+        }
+
+        #box {
+          background-color: green;
+          border: 1px solid transparent;
+          animation-name: shape;
+          animation-duration: 3s;
+        }
+        */
+
+        /*
+        정의한 애니메이션 사용
+        animation-name: <키프레임 이름> | none;
+        */
+
+        /*
+        애니메이션의 실행 시간을 지정
+        animation-duration: <시간>;
+        지정할 수 있는 시간 단위는 초(s) 또는 밀리초(ms), 기본값은 0이므로 animation-duration 속성값을 정하지 않으면 애니메이션은 실행되지 않는다.
+        */
+
+        /*
+        애니메이션의 방향을 지정
+        animation-direction: normal;
+        animation-direction 속성값
+        normal - 애니메이션을 from에서 to로 진행한다. 기본값
+        reverse - 애니메이션을 to에서 from으로, 원래 방향과는 반대로 진행한다.
+        alternate - 홀수 번째는 normal로, 짝수 번째는 reverse로 진행한다.
+        alternate-reverse - 홀수 번째는 reverse로, 짝수 번째는 normal로 진행한다.
+        */
+
+        /*
+        애니메이션의 반복 횟수를 지정
+        animation-iteration-count: <숫자> | infinite;
+        animation-iteration-count 속성값
+        <숫자> - 애니메이션의 반복 횟수를 정한다.
+        infinite - 애니메이션을 무한 반복한다.
+        */
+
+        /*
+        애니메이션의 속도 곡선을 지정
+        animation-timing-function: linear | ease | ease-in | ease-out | ease-in-out | cubic-bezier(n, n, n, n);
+        */
+
+        /*
+        애니메이션의 속성을 한꺼번에 표기
+        animation: <animation-name> | <animation-duration> | <animation-timing-function> | <animation-delay> | <animation-iteration-count> | <animation-direction>;
+        주의할 점은 animation 속성을 사용할 때 animation-duration 속성값을 반드시 표기해야 한다는 것이다. 애니메이션 실행 시간을 지정하지 않으면 기본값으로 0이 적용되어 애니메이션 효과를 볼 수 없기 때문이다.
+
+        사용 예시
+        @keyframes rotate {
+          from {
+            transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+          }
+          50% {
+            transform: perspective(120px) rotateX(-180deg) rotateY(0deg);
+          }
+          to {
+            transform: perspective(120px) rotateX(-180deg) rotateY(-180deg);
+          }
+        }
+
+        @keyframes background {
+          from {
+            background-color: red;
+          }
+          50% {
+            background-color: green;
+          }
+          to {
+            background-color: blue;
+          }
+        }
+
+        #box {
+          width: 100px;
+          height: 100px;
+          margin: 60px auto;
+          animation: rotate 1.5s infinite, background 1.5s infinite alternate;
+        }
+        */
       }
     </style>
   </head>
