@@ -622,6 +622,98 @@
           animation: rotate 1.5s infinite, background 1.5s infinite alternate;
         }
         */
+
+        /*
+        사용자가 어떤 미디어를 사용하는가에 따라 사이트의 형태가 바뀌도록 CSS를 작성하는 방법을 미디어 쿼리라고 한다.
+        */
+
+        /*
+        미디어 쿼리의 기본형
+        @media [only | not] 미디어 유형 [and 조건] * [and 조건] {
+        }
+        only - 미디어 쿼리를 지원하지 않는 웹 브라우저에서는 미디어 쿼리를 무시하고 실행하지 않는다.
+        not - not 다음에 지정하는 미디어 유형을 제외한다. 예를 들어 not tv라고 지정하면 TV를 제외한 미디어 유형에만 적용한다.
+        and - 조건을 여러 개 연결해서 추가할 수 있다.
+
+        사용 예시
+        @media screen and (min-width: 700px) and (max-width: 1400px) {
+          background-color: blue;
+        }
+        @media screen and (min-device-width: 375px) and (min-device-height: 812px) {
+          color: blue;
+        }
+        */
+
+        /*
+        미디어 쿼리는 미디어별로 적용할 CSS를 따로 작성하므로 @media 속성 다음에 미디어 유형을 알려 줘야 한다.
+        @media 속성의 미디어 유형
+        all - 모든 미디어 유형에서 사용할 CSS를 정의한다.
+        print - 인쇄 장치에서 사용할 CSS를 정의한다.
+        screen - 컴퓨터 스크린에서 사용할 CSS를 정의한다. 스마트폰의 스크린도 포함된다.
+        tv - 음성과 영상이 동시에 출력되는 TV에서 사용할 CSS를 정의한다.
+        그 외에 aural, braille, handheld 등이 있다.
+        */
+
+        /*
+        미디어 쿼리에서 orientation 속성을 사용하면 기기의 방향을 확인할 수 있고, 그에 따라서 웹 사이트의 레이아웃을 바꿀 수 있다. orientation 속성값으로는 portrait와 landscape가 있다. 가로 모드는 landscape이고, 세로 모드는 portrait이며, 기본값은 landscape이다.
+
+        사용 예시
+        @media screen and (min-device-width: 812px) and (orientation: landscape) {
+        }
+
+        모바일 기기의 뷰포트 크기값이 정리되어 있는 사이트 : https://yesviz.com/devices.php
+        */
+        
+        /*
+        미디어 쿼리 적용하기
+        미디어 쿼리를 웹 문서에 적용하는 방법은 크게 '외부 CSS 파일로 연결하는 방법'과 '웹 문서에 직접 정의하는 방법'이 있다.
+        */
+        
+        /*
+        외부 CSS 파일로 연결하는 방법 - 이 방법은 각 조건별로 CSS 파일을 따로 저장한 뒤 <link> 태그나 @import 문을 사용해서 연결한다.
+
+        기본형 - <link rel="stylesheet" media="미디어 쿼리 조건" href="css 파일 경로">
+        기본형의 의미는 미디어 쿼리 조건이 맞다면 지정한 CSS 파일을 가져와서 적용하라는 것이다. 속성의 순서는 상관없다.
+
+        사용 예시
+        <link rel="stylesheet" media="print" href="css/print.css">
+
+        기본형 - @import url(css 파일 경로) 미디어 쿼리 조건;
+
+        사용 예시
+        @import url("css/tablet.css") only screen and (min-width: 321px) and (max-width: 768px);
+
+        <link> 태그와 @import 문은 모두 외부에서 CSS 파일을 가져와 사용하는 방법이다. CSS 파일이 한두개밖에 없다면 속도나 처리 면에서는 큰 차이가 없다. 그런데 인터넷 익스플로러의 경우 @import 문과 자바스크립트가 함께 있을 경우 자바스크립트를 먼저 내려받은 후에 @import 문에 있는 CSS를 다운로드 한다. 그래서 자바스크립트에서 스타일과 관련된 정보를 처리해야 할 경우 오류가 날 수도 있다. 그러므로 CSS 파일이 많고 규모가 큰 사이트를 개발한다면 @import 문보다 <link> 태그를 사용하는게 좋다.
+        */
+
+        /*         
+        웹 문서에 직접 정의하는 방법 - 2가지
+
+        1. <style> 태그 안에서 media 속성을 사용하여 조건을 지정하고, 그 조건에 맞는 스타일 규칙을 정의
+        
+        사용 예시
+        <style media="screen and (max-width: 320px)">
+          body {
+            background-color: red;
+          }
+        </style>
+
+        2. 스타일을 선언할 때 @media 문을 사용해 각 조건별로 스타일을 지정해 놓고 조건에 따라 스타일을 선택해서 적용하기
+
+        사용 예시
+        <style>
+          @media screen and (max-width: 320px) {
+            body {
+              background-color: red;
+            }
+          }
+          @media screen and (min-width: 321px) {
+            body {
+              background-color: blue;
+            }
+          }
+        </style>
+        */
       }
     </style>
   </head>
